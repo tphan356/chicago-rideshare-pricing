@@ -29,14 +29,17 @@ The analysis will use trip data from the City of Chicago's Transportation Networ
 ```text
 chicago-rideshare-pricing/
 │
-├── data/                  # Raw and processed data
+├── data/
+│   ├── raw/
+│   └── processed/
 │
-├── code/                  # Jupyter notebooks and Python scripts
+├── code/
+│   └── data_cleaning.ipynb
 │
-├── reports/               # Generated reports and visualizations
+├── reports/
 │
-├── requirements.txt       # Dependencies
-└── README.md              # Project documentation
+├── requirements.txt
+└── README.md
 ```
 
 ---

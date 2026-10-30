@@ -25,12 +25,20 @@ Preliminary exploratory analysis shows that ride demand and average fares vary s
 │   └── reference/                             # Chicago community area geographic data
 ├── code/                                      # Jupyter notebooks
 │   ├── 01_data_ingestion.ipynb                # Data ingestion and CSV-to-Parquet conversion
-│   ├── 02_data_cleaning.ipynb                 # Data cleaning and preparation
+│   ├── 02_data_cleaning.ipynb                 # Data cleaning and clean dataset generation
 │   └── 03_eda.ipynb                           # Exploratory data analysis
 ├── reports/                                   # Generated reports and visualizations
 ├── requirements.txt                           # Dependencies
 └── README.md                                  # Project documentation
 ```
+
+The cleaned dataset is not stored in the GitHub repository because of its large file size. Run `code/02_data_cleaning.ipynb` to generate:
+
+```text
+data/processed/rideshare_2025_clean.parquet
+```
+
+locally before running the exploratory analysis.
 
 ---
 
@@ -51,6 +59,14 @@ Preliminary exploratory analysis shows that ride demand and average fares vary s
   - additional_charges: additional trip charges
   - trip_total: total trip cost
 
+The monthly Parquet files are stored in `data/parquet/`. The cleaned dataset is approximately 1.9 GB and is therefore generated locally rather than stored in the repository. To reproduce the cleaned dataset, run:
+
+`code/02_data_cleaning.ipynb`
+
+This creates:
+
+`data/processed/rideshare_2025_clean.parquet`
+
 Chicago community area geographic boundary data is also used to visualize trip demand and average fares across the city's 77 community areas.
 
 Weather data from the NOAA National Centers for Environmental Information will be incorporated during later stages of the project. Variables may include temperature, precipitation, and snow.
@@ -64,6 +80,8 @@ The main analysis is contained in:
 `code/01_data_ingestion.ipynb`  
 `code/02_data_cleaning.ipynb`  
 `code/03_eda.ipynb`
+
+The notebooks should be run in numerical order.
 
 Major steps completed so far include:
 
@@ -105,7 +123,7 @@ Data ingestion and conversion:
 
 - [`code/01_data_ingestion.ipynb`](https://github.com/tphan356/chicago-rideshare-pricing/blob/main/code/01_data_ingestion.ipynb)
 
-Data cleaning:
+Data cleaning and generation of the local cleaned dataset:
 
 - [`code/02_data_cleaning.ipynb`](https://github.com/tphan356/chicago-rideshare-pricing/blob/main/code/02_data_cleaning.ipynb)
 

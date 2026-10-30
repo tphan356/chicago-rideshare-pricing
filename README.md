@@ -159,4 +159,3 @@ All required Python packages are listed in:
 - Matplotlib
 - GeoPandas
 - scikit-learn
-- Seattle University DATA 5100
